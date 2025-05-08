@@ -1,0 +1,3 @@
+include:
+  - ./traefik.yaml
+  - ./networks.yaml
