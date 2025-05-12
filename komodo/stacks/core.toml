@@ -3,8 +3,11 @@ name = "enceladus-core"
 tags = ["enceladus"]
 [stack.config]
 server = "enceladus"
+project_name = "core"
+links = ["https://traefik.enceladus.jekotia.net"]
 git_account = "jekotia"
 repo = "jekotia/enceladus"
+branch = "main"
 webhook_enabled = false
 run_directory = "docker/stacks/core/"
 file_paths = [
