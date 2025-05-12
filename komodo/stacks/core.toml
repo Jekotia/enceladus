@@ -10,8 +10,7 @@ run_directory = "docker/stacks/core/"
 file_paths = [
   "compose.yaml",
   "portainer.yaml",
-  "traefik.yaml",
-  "../../networks/proxy_private.yaml"
+  "traefik.yaml"
 ]
 environment = """
 TIMEZONE=[[TIMEZONE]]
