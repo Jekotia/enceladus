@@ -1,26 +1,26 @@
 [[stack]]
 name = "enceladus-core"
+tags = ["enceladus"]
 [stack.config]
 server = "enceladus"
 git_account = "jekotia"
 repo = "jekotia/enceladus"
 webhook_enabled = false
-run_directory = "docker/stacks/core"
-file_paths = ["traefik.yaml", "networks.yaml"]
+run_directory = "docker/stacks/core/"
+file_paths = [
+  "compose.yaml",
+  "portainer.yaml",
+  "traefik.yaml",
+  "../../networks/proxy_private.yaml"
+]
 environment = """
-SECRETS_CLOUDFLARE_API_KEY=[[ENCELADUS_TRAEFIK_CLOUDFLARE_API_TOKEN]]
-SECRETS_CLOUDFLARE_EMAIL=[[SECRETS_CLOUDFLARE_EMAIL]]
+TIMEZONE=[[TIMEZONE]]
 
 TRAEFIK_URL_PREFIX=traefik.enceladus.
+NETWORK_DOMAIN=[[NETWORK_DOMAIN]]
 
-HOSTNAME=enceladus
-TIMEZONE=America/Toronto
-
-#-> NETWORK\LAN
-# This must be a regex string, e.g. 10\.0\.0\.
-NETWORK_LAN_ADDRESS=10\.0\.0\.
-#-> NETWORK\WAN
-NETWORK_DOMAIN=jekotia.net
+SECRETS_CLOUDFLARE_API_KEY=[[ENCELADUS_TRAEFIK_CLOUDFLARE_API_TOKEN]]
+SECRETS_CLOUDFLARE_EMAIL=[[SECRETS_CLOUDFLARE_EMAIL]]
 
 #########-> DANGER ZONE <-#########
 UID=1000

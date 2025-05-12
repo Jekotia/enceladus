@@ -1,3 +1,4 @@
 include:
-  - ./traefik.yaml
-  - ./networks.yaml
+  - portainer.yaml
+  - traefik.yaml
+  - ../../networks/proxy_private.yaml
